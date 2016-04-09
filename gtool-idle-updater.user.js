@@ -10,8 +10,8 @@
 /* jshint -W097 */
 'use strict';
 
-var timeout = localStorage.getItem('gtiu-timeout') || 600;
-var delay = localStorage.getItem('gtiu-delay') || 500;
+var timeout = parseInt(localStorage.getItem('gtiu-timeout')) || 600;
+var delay = parseInt(localStorage.getItem('gtiu-delay')) || 500;
 
 $(document).on('giu-ticker', function (event, ms) {
     ms = ms - 1000;
