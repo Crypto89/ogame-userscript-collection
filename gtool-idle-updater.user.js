@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GTool Idle Updater
 // @namespace    http://oplanet.eu
-// @version      0.1.1
+// @version      0.1.2
 // @description  Idle updater for GalaxyTool
 // @author       Crypto
 // @match        https://*.ogame.gameforge.com/game/*
