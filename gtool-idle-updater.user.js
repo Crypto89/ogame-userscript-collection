@@ -65,7 +65,7 @@ $(document).on('galaxy', function(event) {
         // generates a value for delay +- 50
         setTimeout(
             loadContent.bind(null, galaxy, s, true),
-            s * delay + (Math.floot(Math.random() * 100) -50)
+            s * delay + (Math.floor(Math.random() * 100) -50)
         );
     }
     
