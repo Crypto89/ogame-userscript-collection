@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GTool Idle Updater
 // @namespace    http://oplanet.eu
-// @version      0.1.3
+// @version      0.1.4
 // @description  Idle updater for GalaxyTool
 // @author       Crypto
 // @match        https://*.ogame.gameforge.com/game/*
@@ -59,13 +59,14 @@ $(document).on('galaxy', function(event) {
     
     // generate random galaxy
     var galaxy = Math.floor(Math.random() * 9) + 1;
-    
-    for (var s=1; s<500; s++) {
+    var wait = Math.floor(Math.random() * 3000);
+
+    for (var s=(wait % 499) + 1; s<500; s++) {
         // make this slightly more random
         // generates a value for delay +- 50
         setTimeout(
             loadContent.bind(null, galaxy, s, true),
-            s * delay + (Math.floor(Math.random() * 100) -50)
+            wait + (s * delay + (Math.floor(Math.random() * 50) -25))
         );
     }
     
@@ -74,7 +75,7 @@ $(document).on('galaxy', function(event) {
         function() {
             document.location.href = document.location.origin+"/game/index.php?page=overview";
         },
-        501 * delay
+        wait + (501 * delay)
     );
 });
 
